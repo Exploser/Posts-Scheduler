@@ -1,13 +1,22 @@
 <h1> Sign up </h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
-<div>
-    <%= form.text_field :email %>
-</div>
-<div>
-    <%= form.password_field :password %>
-</div>
-<div>
-    <%= form.password_field :passowrd_confirmation %>
-</div>
+<%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |sign_up_form| %>
+    <div class="mb-3">
+        <%= sign_up_form.label :email %>
+        <%= sign_up_form.text_field :email, class: "form-control", placeholder: "user@domain.com" %>
+    </div>
+    <div class="mb-3">
+        <%= sign_up_form.label :password %>
+        <%= sign_up_form.password_field :password, class: "form-control", placeholder: "Super Secret!" %>
+    </div>
+    <div class="mb-3">
+        <%= sign_up_form.label :password_confirmation %>
+        <%= sign_up_form.password_field :passowrd_confirmation, class: "form-control", placeholder: "Super Secret!" %>
+    </div>
+    
+    <div class="mb-3">
+        <%= sign_up_form.submit "Sign Up", class: "btn btn-primary"%>
+    </div>
+
+
 <% end %>
