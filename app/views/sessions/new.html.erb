@@ -1,0 +1,17 @@
+<h1>Sign In</h1>
+
+<%= form_with url: sign_in_path do |sign_in_form| %>
+    <div class="mb-3">
+        <%= sign_in_form.label :email %>
+        <%= sign_in_form.text_field :email, class: "form-control", placeholder: "user@domain.com" %>
+    </div>
+
+    <div class="mb-3">
+        <%= sign_in_form.label :password %>
+        <%= sign_in_form.password_field :password, class: "form-control", placeholder: "Super Secret!" %>
+    </div>
+
+    <div class="mb-3">
+        <%= sign_in_form.submit "Sign In", class: "btn btn-primary"%>
+    </div>
+<% end %>
