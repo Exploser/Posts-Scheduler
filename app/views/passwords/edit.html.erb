@@ -1,0 +1,28 @@
+<h1> Edit Password </h1>
+
+<%= form_with model: Current.user, url: edit_password_path, data: { turbo: false } do |update_password_form| %>
+
+    <% if update_password_form.object.errors.any? %>
+        <div class="alert alert-danger">
+            <% update_password_form.object.errors.full_messages.each do |message| %>
+                <div> <%= message %></div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <div class="mb-3">
+        <%= update_password_form.label :password %>
+        <%= update_password_form.password_field :password, class: "form-control", placeholder: "Super Secret!" %>
+    </div>
+    
+    <div class="mb-3">
+        <%= update_password_form.label :password_confirmation %>
+        <%= update_password_form.password_field :password_confirmation, class: "form-control", placeholder: "Super Secret!" %>
+    </div>
+    
+    <div class="mb-3">
+        <%= update_password_form.submit "Update Password", class: "btn btn-primary"%>
+    </div>
+
+
+<% end %>
