@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "password", to: "passwords#edit", as: :edit_password
   patch "password", to: "passwords#update"
 
+  # /password_reset
+  get "password/reset", to: "password_resets#new"
+  post "password/reset", to: "password_resets#create"
   # /sign_up
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
 
   # /log_out
   delete "logout", to: "sessions#destroy"
+
 
 # Defines the root path route ("/")
   root to: "main#index"
