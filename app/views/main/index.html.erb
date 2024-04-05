@@ -2,4 +2,6 @@
     <h1>Welcome to Post Scheduler </h1>
 </div>
 
-<%= button_to "Connect Twitter", '/auth/twitter2', method: :post, data: {turbo: "false"}, class: "btn btn-primary"%>
+<%= form_tag('/auth/twitter2', method: 'post', data: {turbo: false}) do%>
+    <button type='twitter' class="btn btn-success">Login with Developer</button>
+<% end %>

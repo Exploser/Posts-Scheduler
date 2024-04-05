@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   # /Omni_Auth
   post "auth/:provider/callback", to: "omniauth_callbacks#:provider"
 
+  # /Omni_Auth Tests
+  get "auth/:provider/callback", to: "sessions#callback"
+
 # Defines the root path route ("/")
   root to: "main#index"
 

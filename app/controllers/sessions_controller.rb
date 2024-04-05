@@ -1,6 +1,14 @@
 class SessionsController < ApplicationController
-  def new
+    # skip_before_action :verify_authenticity_token
 
+  def new
+  end
+
+  def callback
+    user_info = request.env['onmiauth.auth']
+    binding.pry
+
+    render json: user_info
   end
 
   def create
