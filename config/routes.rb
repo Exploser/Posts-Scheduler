@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   # resources
   resources :twitter_account
+  resources :tweets
 
 # Defines the root path route ("/")
   root to: "main#index"
