@@ -25,10 +25,12 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
 
   # /Omni_Auth
-  post "auth/:provider/callback", to: "omniauth_callbacks#:provider"
-
-  # /Omni_Auth Tests
+  post "auth/twitter/callback", to: "omniauth_callbacks#twitter2"
   get "auth/twitter2/callback", to: "omniauth_callbacks#twitter2"
+
+
+  # resources
+  resources :twitter_account
 
 # Defines the root path route ("/")
   root to: "main#index"
