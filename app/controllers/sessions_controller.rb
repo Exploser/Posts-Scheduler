@@ -4,13 +4,6 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def callback
-    user_info = request.env['onmiauth.auth']
-    binding.pry
-
-    render json: user_info
-  end
-
   def create
     user = User.find_by(email: params[:email])
 
