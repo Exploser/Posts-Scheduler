@@ -7,8 +7,11 @@ class TwitterAccountController < ApplicationController
   end
 
   def destroy
-    @twitter_account.destroy
-    redirect_to twitter_account_index_path, notice: "Successfully Deleted @#{@twitter_account.username}"
+    if @twitter_account.destroy
+      redirect_to twitter_account_index_path, notice: "Successfully Deleted @#{@twitter_account.username}"
+    else
+      render :edit
+    end
   end
 
   def set_twitter_account

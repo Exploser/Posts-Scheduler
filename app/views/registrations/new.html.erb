@@ -2,7 +2,7 @@
 
 <%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |sign_up_form| %>
 
-    <%= render 'shared/form_errors', form: form %>
+    <%= render 'shared/form_errors', form: sign_up_form %>
 
 
     <div class="mb-3">
