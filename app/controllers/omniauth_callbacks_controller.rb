@@ -1,5 +1,4 @@
 class OmniauthCallbacksController < ApplicationController
-
   def twitter2
     twitter_account = Current.user.twitter_account.where(username: auth.info.nickname).first_or_initialize
     twitter_account.update(
@@ -9,6 +8,8 @@ class OmniauthCallbacksController < ApplicationController
       token: auth.credentials.token,
       secret: auth.credentials.secret,
       )
+       # Log the contents of the auth object
+      Rails.logger.debug("Auth object: #{auth.inspect}")
       redirect_to twitter_account_index_path, notice: "Successfully Connected Twitter Account"
   end
 
