@@ -4,6 +4,10 @@ Twitter Post Scheduler is a Ruby on Rails application that integrates with the T
 
 ## INFO
   This project was hosted earlier but due to the change with twitterAPI it's currently in a non-(completely)functioning state
+  ![image](https://github.com/Exploser/Posts-Scheduler/assets/126280113/9c105c29-f2ba-4c40-a56b-e994380ff3be)
+
+  Logo
+  ![logo](https://github.com/Exploser/Posts-Scheduler/assets/126280113/978bec8a-2c55-43e4-b667-e8b4da19a517)
 
 ## Features
 
