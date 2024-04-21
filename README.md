@@ -12,13 +12,16 @@ Twitter Post Scheduler is a Ruby on Rails application that integrates with the T
 - **Twitter Account Retrieval**: Fetches and displays your connected Twitter account details.
 - **Tweet Formatting and Scheduling**: Create tweets and schedule them to be posted at a specific date and time.
 
-## System Requirements
+## Dependencies & Versions
 
 To run the Twitter Post Scheduler, you will need:
 
-- Ruby (version specified in `.ruby-version`)
-- Rails (version specified in `Gemfile`)
-- PostgreSQL
+- Ruby 3.3
+- Rails 7.1
+- SQLite 1.4
+- Omniauth 2.1
+- Omniauth-Twitter2 1.0
+- X 0.14
 
 ## Local Installation
 
