@@ -8,6 +8,10 @@ Twitter Post Scheduler is a Ruby on Rails application that integrates with the T
 
   Logo
   ![logo](https://github.com/Exploser/Posts-Scheduler/assets/126280113/978bec8a-2c55-43e4-b667-e8b4da19a517)
+## Images of the site
+  ![image](https://github.com/Exploser/Posts-Scheduler/assets/126280113/d0a71f8c-62fe-400f-bf15-764b023f68b6)
+  ![image2](https://github.com/Exploser/Posts-Scheduler/assets/126280113/74dbd6c9-5920-43f2-8121-08bd4e869248)
+
 
 ## Features
 
