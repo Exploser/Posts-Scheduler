@@ -7,6 +7,7 @@ class TweetsController < ApplicationController
   end
 
   def new
+    logger.info "Here!"
     @tweet = Tweet.new
   end
 
@@ -20,6 +21,12 @@ class TweetsController < ApplicationController
       render :new
     end
   end
+
+  # after_save_commit do
+  #   if publish_at_previously_changed?
+  #     TweetJob.set(wait_until: publish_at).perform_later(self)
+  #   end
+  # end
 
   def edit
   end

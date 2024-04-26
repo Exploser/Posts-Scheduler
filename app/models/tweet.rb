@@ -1,7 +1,6 @@
 class Tweet < ApplicationRecord
   belongs_to :user
   belongs_to :twitter_account
-  require "x"
 
   validates :body, length: { minimum: 1, maximum: 280 }
   validates :publish_at, presence: true
@@ -21,7 +20,22 @@ class Tweet < ApplicationRecord
   end
 
   def publish_to_twitter!
-    tweet = twitter_account.client.post("tweets", "{\"text\":\"#{body}\"}")
-    update(tweet_id: tweet["data"]["id"])
+    # Use clientDetails from the associated TwitterAccount
+    client = twitter_account.clientDetails
+    logger.info "Client details: #{client.inspect}"
+
+    # Attempt to post a tweet
+    tweet_data = {text: self.body}.to_json
+    response = client.post("tweets", tweet_data)
+    if response.success?
+      update(tweet_id: response.data["id"])
+      logger.info "Tweet posted successfully: #{response.inspect}"
+    else
+      logger.error "Failed to post tweet: #{response.error_message}"
     end
+
+    # Optionally, retrieve user details if needed
+    user = client.get("users/me")
+    logger.info "User details: #{user.inspect}"
+  end
 end
