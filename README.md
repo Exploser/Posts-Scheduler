@@ -1,4 +1,4 @@
-# Twitter Post Scheduler
+# Tweets Scheduler
 
 Twitter Post Scheduler is a Ruby on Rails application that integrates with the Twitter API to allow users to schedule tweets to be posted at a future time. Using OAuth and OmniAuth strategies for secure authentication, it streamlines the tweeting process by enabling format scheduling through an intuitive web interface.
 
